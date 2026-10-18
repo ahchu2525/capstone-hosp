@@ -24,8 +24,6 @@ Together they help managers set deposit rules, plan overbooking and contact high
 
 ## Data
 
-Sample data provided by NTUC LearningHub.
-
 | File | Rows | What it holds |
 | --- | --- | --- |
 | `Bookings.csv` | 119,390 | 1 row per booking |
@@ -52,8 +50,8 @@ Sample data provided by NTUC LearningHub.
 - Predictive model and results
 - Recommendations
 - Conclusion and limitations
-- Tools and resources
-- Retrospective
+- Tools
+
 
 ## Tools
 
