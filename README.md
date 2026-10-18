@@ -1,4 +1,4 @@
-# capstone-hosp
+# capstone-hosp (Prepared by Kelvin Chu)
 
 # Hotel Booking Cancellations
 ---
