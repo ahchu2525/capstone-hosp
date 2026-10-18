@@ -22,4 +22,14 @@ Together they help managers set deposit rules, plan overbooking and contact high
 4. **Descriptive:** Compare average daily rate and length of stay between the City Hotel and the Resort Hotel across the year.
 5. **Descriptive:** Examine how guest profile and history relate to cancellations. These include repeat guests, previous cancellations, special requests and country of origin.
 
+## Data understanding
 
+The 5 files were loaded in `clean.ipynb` straight from this repository. Each was checked for structure, missing values, duplicates and odd values.
+
+- `Bookings.csv` is the main table with 1 row per booking. The other 4 files are lookup tables joined by ID columns. Every ID has a match.
+- Bookings cover arrivals from July 2015 to August 2017 at 2 hotels.
+- 4 columns have missing values: `children` (4), `country` (488), `agent` (16,340) and `company` (112,593).
+- 180 bookings have no guests. 2 have an impossible average daily rate (ADR) of below 0 or 5,400.
+- 33,010 bookings match another booking in every column except the ID. These are likely group bookings with several rooms.
+
+The full data issues log is in `clean.ipynb`.
