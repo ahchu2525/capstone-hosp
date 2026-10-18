@@ -22,37 +22,4 @@ Together they help managers set deposit rules, plan overbooking and contact high
 4. **Predictive:** Build and compare at least 3 classification models that predict whether a booking will cancel. Measure them against a simple baseline.
 5. **Predictive:** Explain the main drivers of cancellation from the best model. Propose how it can be deployed, monitored and retrained.
 
-## Data
 
-| File | Rows | What it holds |
-| --- | --- | --- |
-| `Bookings.csv` | 119,390 | 1 row per booking |
-| `Hotels.csv` | 2 | City Hotel and Resort Hotel |
-| `Market Segments.csv` | 26 | Market segment and distribution channel |
-| `Customer Types.csv` | 36 | Customer type, deposit type and meal plan |
-| `Reservation Status.csv` | 3 | Check-Out, Canceled or No-Show |
-
-## Project files
-
-| File | Purpose | Status |
-| --- | --- | --- |
-| `01_clean.ipynb` | Understand and clean the data | In progress |
-| `02_eda.ipynb` | Descriptive analysis | Not started |
-| `03_model.ipynb` | Predictive model | Not started |
-| `hotel_dashboard.pbix` | Power BI dashboard | Not started |
-| `hotel_slides.pptx` | Final presentation | Not started |
-
-## Sections to be added
-
-- Data understanding and preparation
-- Exploratory data analysis
-- Power BI dashboard
-- Predictive model and results
-- Recommendations
-- Conclusion and limitations
-- Tools
-
-
-## Tools
-
-Python (pandas, matplotlib, seaborn, scikit-learn) in Google Colab - Microsoft Power BI Desktop - GitHub
