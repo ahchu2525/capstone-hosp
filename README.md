@@ -19,7 +19,7 @@ Together they help managers set deposit rules, plan overbooking and contact high
 1. **Descriptive:** Measure booking volume, cancellation rate and average daily rate by hotel, month and season.
 2. **Descriptive:** Identify the booking factors linked to higher cancellation rates. These include lead time, deposit type, market segment, distribution channel, customer type and guest history.
 3. **Descriptive:** Estimate the revenue lost to cancellations and present the findings in an interactive Power BI dashboard for hotel managers.
-4. **Predictive:** Build and compare at least 3 classification models that predict whether a booking will cancel. Measure them against a simple baseline.
-5. **Predictive:** Explain the main drivers of cancellation from the best model. Propose how it can be deployed, monitored and retrained.
+4. **Descriptive:** Compare average daily rate and length of stay between the City Hotel and the Resort Hotel across the year.
+5. **Descriptive:** Examine how guest profile and history relate to cancellations. These include repeat guests, previous cancellations, special requests and country of origin.
 
 
