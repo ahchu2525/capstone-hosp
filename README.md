@@ -93,3 +93,52 @@ All analysis uses the clean data. 37.1% of bookings were cancelled or did not sh
 The clean data is saved as `hotel_clean.csv` with 119,203 rows and 42 columns. It is stored in this repository. Power BI connects to it through its GitHub raw link so the dashboard can be refreshed when the file is updated:
 
 `https://raw.githubusercontent.com/ahchu2525/capstone-hosp/main/hotel_clean.csv`
+
+## 6. Power BI dashboard
+
+`hotel_dashboard.pbix` has 3 pages for hotel managers. It reads `hotel_clean.csv` from this repository so it can be refreshed when the data changes.
+
+### Overview
+
+![Overview page](overview.png)
+
+Shows the size of the problem: 119,203 bookings, 37.1% cancelled or no-show and 16.72 million in room revenue lost. Bookings peak each summer. The City Hotel cancels far more often than the Resort Hotel.
+
+### Why Guests Cancel
+
+![Why Guests Cancel page](why_cancel.png)
+
+Shows the cancellation rate by lead time, deposit type, market segment, customer type, guest type and special requests. Bookings made far ahead, Non Refund deposits and group bookings cancel most.
+
+### Revenue Impact
+
+![Revenue Impact page](revenue.png)
+
+Shows where revenue is lost and how far ahead guests cancel. Online travel agents account for 10.2 million of the 16.7 million lost. 1 in 9 cancellations come in the last week before arrival.
+
+### How to use the dashboard
+
+- The Hotel, Year and Market Segment filters at the top apply to all 3 pages.
+- Click any bar or box to filter the page. Click it again to clear.
+- The Reset filters button clears all filters.
+- The page buttons move between pages.
+- Hover over a bar to see the number of bookings behind it.
+
+### Measures
+
+| Measure | DAX formula |
+| --- | --- |
+| Total Bookings | `COUNTROWS ( Bookings )` |
+| Cancelled Bookings | `CALCULATE ( [Total Bookings], Bookings[is_canceled] = 1 )` |
+| Stayed Bookings | `CALCULATE ( [Total Bookings], Bookings[is_canceled] = 0 )` |
+| Cancellation Rate | `DIVIDE ( [Cancelled Bookings], [Total Bookings] )` |
+| No Shows | `CALCULATE ( [Total Bookings], Bookings[reservation_status] = "No-Show" )` |
+| Revenue Earned | `CALCULATE ( SUM ( Bookings[room_revenue] ), Bookings[is_canceled] = 0 )` |
+| Revenue Lost | `CALCULATE ( SUM ( Bookings[room_revenue] ), Bookings[is_canceled] = 1 )` |
+| Lost Revenue Share | `DIVIDE ( [Revenue Lost], [Revenue Earned] + [Revenue Lost] )` |
+| ADR Stayed | `CALCULATE ( AVERAGE ( Bookings[adr] ), Bookings[is_canceled] = 0 )` |
+| Avg Nights Stayed | `CALCULATE ( AVERAGE ( Bookings[total_nights] ), Bookings[is_canceled] = 0 )` |
+| Avg Lead Time | `AVERAGE ( Bookings[lead_time] )` |
+| Median Days Cancelled Before Arrival | `MEDIAN ( Bookings[cancel_days_before_arrival] )` |
+| Late Cancellations | `CALCULATE ( [Total Bookings], Bookings[reservation_status] = "Canceled", Bookings[cancel_days_before_arrival] <= 7 )` |
+| Late Cancellation Share | `DIVIDE ( [Late Cancellations], CALCULATE ( [Total Bookings], Bookings[reservation_status] = "Canceled" ) )` |
