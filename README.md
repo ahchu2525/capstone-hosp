@@ -142,3 +142,31 @@ Shows where revenue is lost and how far ahead guests cancel. Online travel agent
 | Median Days Cancelled Before Arrival | `MEDIAN ( Bookings[cancel_days_before_arrival] )` |
 | Late Cancellations | `CALCULATE ( [Total Bookings], Bookings[reservation_status] = "Canceled", Bookings[cancel_days_before_arrival] <= 7 )` |
 | Late Cancellation Share | `DIVIDE ( [Late Cancellations], CALCULATE ( [Total Bookings], Bookings[reservation_status] = "Canceled" ) )` |
+
+## 7. Recommendations
+
+1. **Ask for a deposit on bookings made far ahead.** Bookings made more than 90 days ahead cancel 44.7% to 67.7% of the time.
+2. **Agree release dates with groups and tour operators.** Groups cancel 61.1% of the time and 99.4% of Non Refund bookings cancel.
+3. **Grow direct bookings.** Online travel agents account for 10.2 million of the 16.7 million lost. Direct bookings cancel only 15.4% of the time.
+4. **Remind guests 2 weeks before arrival.** 11.9% of cancellations come in the last week, when rooms are hardest to resell.
+5. **Plan overbooking by hotel and season.** The City Hotel cancels 41.8% of bookings compared with 27.8% at the Resort Hotel, and the Resort Hotel's rate doubles in summer.
+6. **Reward repeat guests and invite special requests.** Repeat guests cancel 14.7% of the time and guests with 1 special request 22.0%.
+7. **Take extra care with guests who cancelled before.** They cancel again 91.7% of the time.
+
+## 8. Conclusion and limitations
+
+Cancelled bookings made up 39.2% of the hotels' booked room revenue. The risk is highest for bookings made far ahead, group and travel agent bookings, new guests and the City Hotel. Most of these factors are known at the time of booking, so managers can act on them through deposit rules, release dates, direct booking offers and reminders.
+
+**Limitations**
+
+- The data covers only 2 hotels in Portugal from July 2015 to August 2017.
+- The currency for the average daily rate is not stated.
+- Revenue lost is the room value of cancelled bookings. Resold rooms and kept deposits are not recorded, so the real loss is lower.
+- The data does not record why guests cancelled.
+
+## 9. Tools
+
+- **Python** (pandas, NumPy, Matplotlib, seaborn) in Google Colab for loading, cleaning and analysis
+- **Microsoft Power BI Desktop** for the data model, DAX measures and dashboard
+- **GitHub** for version control and sharing
+
