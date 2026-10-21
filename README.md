@@ -87,3 +87,9 @@ All analysis uses the clean data. 37.1% of bookings were cancelled or did not sh
 3. **Booking factors:** cancellation rises from 9.6% for bookings made within 7 days to 67.7% for bookings made over a year ahead. 99.4% of Non Refund bookings cancel. Groups cancel most (61.1%) and Direct bookings least (15.4%).
 4. **Guest profile and history:** repeat guests cancel 14.7% of the time compared with 37.8% for new guests. Guests who cancelled before cancel again 91.7% of the time. Guests with no special requests cancel 47.8% of the time compared with 22.0% with 1 request. Guests from Portugal cancel 56.7% of the time.
 5. **Revenue lost:** cancelled bookings were worth 16.7 million against 26.0 million earned. Online travel agent bookings make up 10.2 million of the loss. August loses the most at 3.0 million. Half of all cancellations happen more than 56 days before arrival but 11.9% come within the last week.
+
+## 5. Prepare the data for Power BI
+
+The clean data is saved as `hotel_clean.csv` with 119,203 rows and 42 columns. It is stored in this repository. Power BI connects to it through its GitHub raw link so the dashboard can be refreshed when the file is updated:
+
+`https://raw.githubusercontent.com/ahchu2525/capstone-hosp/main/hotel_clean.csv`
