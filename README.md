@@ -170,3 +170,18 @@ Cancelled bookings made up 39.2% of the hotels' booked room revenue. The risk is
 - **Microsoft Power BI Desktop** for the data model, DAX measures and dashboard
 - **GitHub** for version control and sharing
 
+## 10. Predictive extension
+
+As an extension beyond the 5 descriptive objectives, section 7 of `hotel.ipynb` tests whether details known at the time of booking can predict cancellations. Columns recorded after the outcome were left out and duplicate rows were removed, leaving 83,282 bookings.
+
+| Model | Accuracy | Recall | Precision |
+| --- | --- | --- | --- |
+| Baseline (always predict stay) | 71.8% | 0% | - |
+| Logistic Regression | 76.3% | 37.0% | 63.9% |
+| Decision Tree | 78.7% | 53.5% | 64.8% |
+| Random Forest | 79.3% | 46.5% | 70.1% |
+| Random Forest (balanced) | 72.8% | 80.5% | 51.1% |
+
+The balanced Random Forest is chosen because it catches 80.5% of cancellations. A wrong flag only costs a reminder, while a missed cancellation costs an empty room. Its top drivers are lead time, local guests, special requests and the Online TA segment, which match the descriptive findings.
+
+The model could score each booking when it is made, flag high-risk bookings for a deposit or a reminder and be retrained every 3 months. It was tested once on past bookings and has not been tested on new bookings.
