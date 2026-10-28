@@ -1,6 +1,6 @@
 # Hotel Booking Cancellations - Capstone Project
 
-**Prepared by:** Kelvin Chu
+**Prepared by:**  Kelvin Chu
 
 ## Problem statement
 
