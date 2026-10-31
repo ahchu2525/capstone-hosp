@@ -166,7 +166,7 @@ Cancelled bookings made up 39.2% of the hotels' booked room revenue. The risk is
 
 ## 9. Tools
 
-- **Python** (pandas, NumPy, Matplotlib, seaborn) in Google Colab for loading, cleaning and analysis
+- **Python** (pandas, NumPy, Matplotlib, seaborn and scikit-learn) in Google Colab for loading, cleaning, analysis and the predictive extension
 - **Microsoft Power BI Desktop** for the data model, DAX measures and dashboard
 - **GitHub** for version control and sharing
 
@@ -185,3 +185,7 @@ As an extension beyond the 5 descriptive objectives, section 7 of `hotel.ipynb` 
 The balanced Random Forest is chosen because it catches 80.5% of cancellations. A wrong flag only costs a reminder, while a missed cancellation costs an empty room. Its top drivers are lead time, local guests, special requests and the Online TA segment, which match the descriptive findings.
 
 The model could score each booking when it is made, flag high-risk bookings for a deposit or a reminder and be retrained every 3 months. It was tested once on past bookings and has not been tested on new bookings.
+
+## 11. Presentation
+
+The presentation slides are in `hotel_slides Kelvin Chu.pptx`.
